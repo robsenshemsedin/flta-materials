@@ -17,8 +17,8 @@ class ExploreScreen extends StatelessWidget {
           final recipies = snapshot.data?.todayRecipes ?? [];
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasData) {
-              return Center(
-                child: Text(recipies[0].authorName),
+              return TodayRecipeListView(
+                recipes: recipies,
               );
             } else {
               return Center(
