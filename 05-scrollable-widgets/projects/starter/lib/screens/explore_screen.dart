@@ -17,8 +17,17 @@ class ExploreScreen extends StatelessWidget {
           final recipies = snapshot.data?.todayRecipes ?? [];
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasData) {
-              return TodayRecipeListView(
-                recipes: recipies,
+              return ListView(
+                scrollDirection: Axis.vertical,
+                children: [
+                  TodayRecipeListView(
+                    recipes: recipies,
+                  ),
+                  Container(
+                    color: Colors.green,
+                    height: 500,
+                  )
+                ],
               );
             } else {
               return Center(
