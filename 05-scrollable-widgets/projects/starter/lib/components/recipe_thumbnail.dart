@@ -10,7 +10,7 @@ class RecipeThumbnail extends StatelessWidget {
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // 2
+    const radius = 16.0;
     return Container(
       padding: const EdgeInsets.all(8),
       // 3
@@ -21,7 +21,8 @@ class RecipeThumbnail extends StatelessWidget {
           Expanded(
             // 5
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
+              borderRadius:
+                  const BorderRadius.only(topLeft: Radius.circular(radius)),
               child: Image.asset(
                 recipe.dishImage,
                 fit: BoxFit.cover,
