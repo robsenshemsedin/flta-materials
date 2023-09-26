@@ -11,11 +11,7 @@ class Ingredients {
     required this.source,
   });
 
-  factory Ingredients.fromJson(Map<String, dynamic> json) {
-    return Ingredients(
-      imageUrl: json['imageUrl'] ?? '',
-      title: json['title'] ?? '',
-      source: json['source'] ?? '',
-    );
+  factory Ingredients.fromJeson(Map<String,dynamic> jeson){
+    return Ingredients(imageUrl: jeson['imageUrl']?? '', title: jeson['title'], source: jeson['source'])
   }
 }
