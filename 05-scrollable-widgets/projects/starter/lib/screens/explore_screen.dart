@@ -23,10 +23,8 @@ class ExploreScreen extends StatelessWidget {
                   TodayRecipeListView(
                     recipes: recipies,
                   ),
-                  Container(
-                    color: Colors.green,
-                    height: 500,
-                  )
+                  FriendPostListView(
+                      friendPosts: snapshot.data?.friendPosts ?? [])
                 ],
               );
             } else {
