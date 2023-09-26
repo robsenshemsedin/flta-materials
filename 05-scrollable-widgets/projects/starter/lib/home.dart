@@ -12,7 +12,6 @@ class HomeState extends State<Home> {
   int _selectedIndex = 0;
 
   static List<Widget> pages = <Widget>[
-    // TODO: Replace with ExploreScreen
     ExploreScreen(),
     // TODO: Replace with RecipesScreen
     Container(color: Colors.green),
