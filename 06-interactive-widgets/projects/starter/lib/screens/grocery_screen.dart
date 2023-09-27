@@ -9,8 +9,7 @@ class GroceryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<GroceryManager>(builder: ((context, groceryManager, child) {
-      if (groceryManager.groceryItems.isNotEmpty) {
-        return Scaffold(
+      return Scaffold(
           // 6
           floatingActionButton: FloatingActionButton(
             child: const Icon(Icons.add),
@@ -40,12 +39,13 @@ class GroceryScreen extends StatelessWidget {
             },
           ),
           // 7
-// body: buildGroceryScreen(),
-        );
-      } else {
-        return const EmptyGroceryScreen();
-      }
+          body: Builder(builder: ((context) {
+            if (groceryManager.groceryItems.isNotEmpty) {
+              return Container(color: Colors.orange);
+            } else {
+              return const EmptyGroceryScreen();
+            }
+          })));
     }));
   }
-  // TODO: Add buildGroceryScreen
 }
