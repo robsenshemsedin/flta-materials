@@ -90,8 +90,7 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
           children: [
             buildNameField(), buildImportanceField(),
             buildDateField(context), buildTimeField(context),
-            // TODO 16: Add time picker
-            // TODO 17: Add color picker
+            buildTimeField(context), buildColorPicker(context),
             // TODO 18: Add slider
             // TODO: 19: Add Grocery Tile
           ],
@@ -273,6 +272,59 @@ class _GroceryItemScreenState extends State<GroceryItemScreen> {
     );
   }
 
-  // TODO: Add buildColorPicker()
+  Widget buildColorPicker(BuildContext context) {
+    // 1
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        // 2
+        Row(
+          children: [
+            Container(
+              height: 50.0,
+              width: 10.0,
+              color: _currentColor,
+            ),
+            const SizedBox(width: 8.0),
+            Text(
+              'Color',
+              style: GoogleFonts.lato(fontSize: 28.0),
+            ),
+          ],
+        ),
+        // 3
+        TextButton(
+          child: const Text('Select'),
+          onPressed: () {
+            // 4
+            showDialog(
+              context: context,
+              builder: (context) {
+                // 5
+                return AlertDialog(
+                  content: BlockPicker(
+                    pickerColor: Colors.cyanAccent,
+                    // 6
+                    onColorChanged: (color) {
+                      setState(() => _currentColor = color);
+                    },
+                  ),
+                  actions: [
+                    // 7
+                    TextButton(
+                      child: const Text('Save'),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
+                  ],
+                );
+              },
+            );
+          },
+        ),
+      ],
+    );
+  }
   // TODO: Add buildQuantityField()
 }
