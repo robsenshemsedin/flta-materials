@@ -26,7 +26,15 @@ class GroceryItemScreen extends StatefulWidget {
 }
 
 class _GroceryItemScreenState extends State<GroceryItemScreen> {
-  // TODO: Add grocery item screen state properties
+  final _nameController = TextEditingController();
+  String _name = '';
+  Importance _importance = Importance.low;
+  DateTime _dueDate = DateTime.now();
+  TimeOfDay _timeOfDay = TimeOfDay.now();
+  Color _currentColor = Colors.green;
+  int _currentSliderValue = 0;
+// TODO: Add initState()
+// TODO: Add dispose(
   @override
   Widget build(BuildContext context) {
     // TODO 12: Add GroceryItemScreen Scaffold
