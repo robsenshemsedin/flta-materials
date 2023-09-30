@@ -67,3 +67,4 @@ class AppStateManager extends ChangeNotifier {
     notifyListeners();
   }
 }
+
