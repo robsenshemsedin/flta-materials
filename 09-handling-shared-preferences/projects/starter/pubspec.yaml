@@ -17,6 +17,7 @@ dependencies:
   flutter_slidable: ^2.0.0
   platform: ^3.1.0
   shared_preferences: ^2.2.1
+  json_annotation: ^4.8.1
   flutter_svg: ^1.1.4
   file: ^6.0.0
 
@@ -24,6 +25,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.1
+  json_serializable: ^6.7.1
+  build_runner: ^2.4.6
 
 flutter:
   uses-material-design: true
